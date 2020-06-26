@@ -18,7 +18,7 @@
     <result column="percentage_sangong" jdbcType="DECIMAL" property="percentageSangong" />
     <result column="shuqiang" jdbcType="DECIMAL" property="shuqiang" />
     <result column="jineng" jdbcType="DECIMAL" property="jineng" />
-    <result column="dengji" jdbcType="DECIMAL" property="dengji" />
+    <result column="dengji" jdbcType="VARCHAR" property="dengji" />
     <result column="lengque" jdbcType="DECIMAL" property="lengque" />
     <result column="fixed_power" jdbcType="DECIMAL" property="fixedPower" />
     <result column="fixed_intelligence" jdbcType="DECIMAL" property="fixedIntelligence" />
@@ -55,7 +55,7 @@
       #{huangzhui,jdbcType=DECIMAL}, #{bao,jdbcType=DECIMAL}, #{baozhui,jdbcType=DECIMAL}, 
       #{bai,jdbcType=DECIMAL}, #{shubai,jdbcType=DECIMAL}, #{percentageLizhi,jdbcType=DECIMAL}, 
       #{zuizhong,jdbcType=DECIMAL}, #{percentageSangong,jdbcType=DECIMAL}, #{shuqiang,jdbcType=DECIMAL}, 
-      #{jineng,jdbcType=DECIMAL}, #{dengji,jdbcType=DECIMAL}, #{lengque,jdbcType=DECIMAL}, 
+      #{jineng,jdbcType=DECIMAL}, #{dengji,jdbcType=VARCHAR}, #{lengque,jdbcType=DECIMAL}, 
       #{fixedPower,jdbcType=DECIMAL}, #{fixedIntelligence,jdbcType=DECIMAL}, #{modifyTime,jdbcType=TIMESTAMP}
       )
   </insert>
@@ -102,7 +102,7 @@
       <if test="jineng != null">
         jineng,
       </if>
-      <if test="dengji != null">
+      <if test="dengji != null and dengji != ''">
         dengji,
       </if>
       <if test="lengque != null">
@@ -158,8 +158,8 @@
       <if test="jineng != null">
         #{jineng,jdbcType=DECIMAL},
       </if>
-      <if test="dengji != null">
-        #{dengji,jdbcType=DECIMAL},
+      <if test="dengji != null and dengji != ''">
+        #{dengji,jdbcType=VARCHAR},
       </if>
       <if test="lengque != null">
         #{lengque,jdbcType=DECIMAL},
@@ -218,8 +218,8 @@
       <if test="jineng != null">
         jineng = #{jineng,jdbcType=DECIMAL},
       </if>
-      <if test="dengji != null">
-        dengji = #{dengji,jdbcType=DECIMAL},
+      <if test="dengji != null and dengji != ''">
+        dengji = #{dengji,jdbcType=VARCHAR},
       </if>
       <if test="lengque != null">
         lengque = #{lengque,jdbcType=DECIMAL},
@@ -252,7 +252,7 @@
       percentage_sangong = #{percentageSangong,jdbcType=DECIMAL},
       shuqiang = #{shuqiang,jdbcType=DECIMAL},
       jineng = #{jineng,jdbcType=DECIMAL},
-      dengji = #{dengji,jdbcType=DECIMAL},
+      dengji = #{dengji,jdbcType=VARCHAR},
       lengque = #{lengque,jdbcType=DECIMAL},
       fixed_power = #{fixedPower,jdbcType=DECIMAL},
       fixed_intelligence = #{fixedIntelligence,jdbcType=DECIMAL},
@@ -260,6 +260,19 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
+  <select id="selectByList"  resultMap="BaseResultMap">
+
+    select
+    <include refid="Base_Column_List" />
+    from equip
+    <if test="list.size()>0">
+      <where> id in
+        <foreach collection="list" item="item" close=")" open="(" separator=",">
+          #{item.id,jdbcType=INTEGER}
+        </foreach>
+      </where>
+    </if>
+  </select>
 
 
 </mapper>

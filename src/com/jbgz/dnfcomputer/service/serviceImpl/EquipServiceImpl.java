@@ -4,12 +4,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.jbgz.dnfcomputer.model.Equip;
 import com.jbgz.dnfcomputer.mapper.EquipMapper;
-import com.jbgz.dnfcomputer.service.EquipService;
-
-import java.util.List;
-
+import com.jbgz.dnfcomputer.service.serviceImpl.EquipService;
 @Service
-public class EquipServiceImpl implements EquipService {
+public class EquipServiceImpl implements EquipService{
 
     @Resource
     private EquipMapper equipMapper;
@@ -44,11 +41,4 @@ public class EquipServiceImpl implements EquipService {
         return equipMapper.updateByPrimaryKey(record);
     }
 
-    @Override
-    public List<Equip> selectByList(List<Equip> list) {
-        return equipMapper.selectByList(list);
-    }
-
 }
-
-

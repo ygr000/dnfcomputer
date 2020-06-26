@@ -1,12 +1,8 @@
-package com.jbgz.dnfcomputer.service;
+package com.jbgz.dnfcomputer.mapper;
 
 import com.jbgz.dnfcomputer.model.Equip;
 
-import java.util.List;
-
-public interface EquipService {
-
-
+public interface EquipMapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(Equip record);
@@ -18,7 +14,4 @@ public interface EquipService {
     int updateByPrimaryKeySelective(Equip record);
 
     int updateByPrimaryKey(Equip record);
-    List<Equip> selectByList( List<Equip> list);
-
 }
-
