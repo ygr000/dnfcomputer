@@ -37,7 +37,7 @@ CREATE TABLE `equip` (
   `percentage_sangong` decimal(10,2) DEFAULT NULL,
   `shuqiang` decimal(10,2) DEFAULT NULL,
   `jineng` decimal(10,2) DEFAULT NULL,
-  `dengji` decimal(10,2) DEFAULT NULL,
+  `dengji` varchar(255) DEFAULT NULL,
   `lengque` decimal(10,2) DEFAULT NULL,
   `fixed_power` decimal(10,2) DEFAULT NULL,
   `fixed_intelligence` decimal(10,2) DEFAULT NULL,
@@ -65,4 +65,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-26 11:43:42
+-- Dump completed on 2020-06-26 13:37:41
