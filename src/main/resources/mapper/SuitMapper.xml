@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jbgz.dnfcomputer.mapper.SuitMapper">
+  <resultMap id="BaseResultMap" type="com.jbgz.dnfcomputer.model.Suit">
+    <!--@mbg.generated-->
+    <!--@Table suit-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="huang2" jdbcType="DECIMAL" property="huang2" />
+    <result column="huangzhui2" jdbcType="DECIMAL" property="huangzhui2" />
+    <result column="bao2" jdbcType="DECIMAL" property="bao2" />
+    <result column="baozhui2" jdbcType="DECIMAL" property="baozhui2" />
+    <result column="bai2" jdbcType="DECIMAL" property="bai2" />
+    <result column="shubai2" jdbcType="DECIMAL" property="shubai2" />
+    <result column="percentage_lizhi2" jdbcType="DECIMAL" property="percentageLizhi2" />
+    <result column="zuizhong2" jdbcType="DECIMAL" property="zuizhong2" />
+    <result column="percentage_sangong2" jdbcType="DECIMAL" property="percentageSangong2" />
+    <result column="shuqiang2" jdbcType="DECIMAL" property="shuqiang2" />
+    <result column="jineng2" jdbcType="DECIMAL" property="jineng2" />
+    <result column="dengji2" jdbcType="VARCHAR" property="dengji2" />
+    <result column="lengque2" jdbcType="DECIMAL" property="lengque2" />
+    <result column="fixed_power2" jdbcType="DECIMAL" property="fixedPower2" />
+    <result column="fixed_intelligence2" jdbcType="DECIMAL" property="fixedIntelligence2" />
+    <result column="huang3" jdbcType="DECIMAL" property="huang3" />
+    <result column="huangzhui3" jdbcType="DECIMAL" property="huangzhui3" />
+    <result column="bao3" jdbcType="DECIMAL" property="bao3" />
+    <result column="baozhui3" jdbcType="DECIMAL" property="baozhui3" />
+    <result column="bai3" jdbcType="DECIMAL" property="bai3" />
+    <result column="shubai3" jdbcType="DECIMAL" property="shubai3" />
+    <result column="percentage_lizhi3" jdbcType="DECIMAL" property="percentageLizhi3" />
+    <result column="zuizhong3" jdbcType="DECIMAL" property="zuizhong3" />
+    <result column="percentage_sangong3" jdbcType="DECIMAL" property="percentageSangong3" />
+    <result column="shuqiang3" jdbcType="DECIMAL" property="shuqiang3" />
+    <result column="jineng3" jdbcType="DECIMAL" property="jineng3" />
+    <result column="dengji3" jdbcType="VARCHAR" property="dengji3" />
+    <result column="lengque3" jdbcType="DECIMAL" property="lengque3" />
+    <result column="fixed_power3" jdbcType="DECIMAL" property="fixedPower3" />
+    <result column="fixed_intelligence3" jdbcType="DECIMAL" property="fixedIntelligence3" />
+    <result column="huang5" jdbcType="DECIMAL" property="huang5" />
+    <result column="huangzhui5" jdbcType="DECIMAL" property="huangzhui5" />
+    <result column="bao5" jdbcType="DECIMAL" property="bao5" />
+    <result column="baozhui5" jdbcType="DECIMAL" property="baozhui5" />
+    <result column="bai5" jdbcType="DECIMAL" property="bai5" />
+    <result column="shubai5" jdbcType="DECIMAL" property="shubai5" />
+    <result column="percentage_lizhi5" jdbcType="DECIMAL" property="percentageLizhi5" />
+    <result column="zuizhong5" jdbcType="DECIMAL" property="zuizhong5" />
+    <result column="percentage_sangong5" jdbcType="DECIMAL" property="percentageSangong5" />
+    <result column="shuqiang5" jdbcType="DECIMAL" property="shuqiang5" />
+    <result column="jineng5" jdbcType="DECIMAL" property="jineng5" />
+    <result column="dengji5" jdbcType="VARCHAR" property="dengji5" />
+    <result column="lengque5" jdbcType="DECIMAL" property="lengque5" />
+    <result column="fixed_power5" jdbcType="DECIMAL" property="fixedPower5" />
+    <result column="fixed_intelligence5" jdbcType="DECIMAL" property="fixedIntelligence5" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="describtion" jdbcType="VARCHAR" property="describtion" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, huang2, huangzhui2, bao2, baozhui2, bai2, shubai2, percentage_lizhi2, 
+    zuizhong2, percentage_sangong2, shuqiang2, jineng2, dengji2, lengque2, fixed_power2, 
+    fixed_intelligence2, huang3, huangzhui3, bao3, baozhui3, bai3, shubai3, percentage_lizhi3, 
+    zuizhong3, percentage_sangong3, shuqiang3, jineng3, dengji3, lengque3, fixed_power3, 
+    fixed_intelligence3, huang5, huangzhui5, bao5, baozhui5, bai5, shubai5, percentage_lizhi5, 
+    zuizhong5, percentage_sangong5, shuqiang5, jineng5, dengji5, lengque5, fixed_power5, 
+    fixed_intelligence5, modify_time, describtion
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from suit
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from suit
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.jbgz.dnfcomputer.model.Suit" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into suit (`name`, huang2, huangzhui2, 
+      bao2, baozhui2, bai2, 
+      shubai2, percentage_lizhi2, zuizhong2, 
+      percentage_sangong2, shuqiang2, jineng2, 
+      dengji2, lengque2, fixed_power2, 
+      fixed_intelligence2, huang3, huangzhui3, 
+      bao3, baozhui3, bai3, 
+      shubai3, percentage_lizhi3, zuizhong3, 
+      percentage_sangong3, shuqiang3, jineng3, 
+      dengji3, lengque3, fixed_power3, 
+      fixed_intelligence3, huang5, huangzhui5, 
+      bao5, baozhui5, bai5, 
+      shubai5, percentage_lizhi5, zuizhong5, 
+      percentage_sangong5, shuqiang5, jineng5, 
+      dengji5, lengque5, fixed_power5, 
+      fixed_intelligence5, modify_time, describtion
+      )
+    values (#{name,jdbcType=VARCHAR}, #{huang2,jdbcType=DECIMAL}, #{huangzhui2,jdbcType=DECIMAL}, 
+      #{bao2,jdbcType=DECIMAL}, #{baozhui2,jdbcType=DECIMAL}, #{bai2,jdbcType=DECIMAL}, 
+      #{shubai2,jdbcType=DECIMAL}, #{percentageLizhi2,jdbcType=DECIMAL}, #{zuizhong2,jdbcType=DECIMAL}, 
+      #{percentageSangong2,jdbcType=DECIMAL}, #{shuqiang2,jdbcType=DECIMAL}, #{jineng2,jdbcType=DECIMAL}, 
+      #{dengji2,jdbcType=VARCHAR}, #{lengque2,jdbcType=DECIMAL}, #{fixedPower2,jdbcType=DECIMAL}, 
+      #{fixedIntelligence2,jdbcType=DECIMAL}, #{huang3,jdbcType=DECIMAL}, #{huangzhui3,jdbcType=DECIMAL}, 
+      #{bao3,jdbcType=DECIMAL}, #{baozhui3,jdbcType=DECIMAL}, #{bai3,jdbcType=DECIMAL}, 
+      #{shubai3,jdbcType=DECIMAL}, #{percentageLizhi3,jdbcType=DECIMAL}, #{zuizhong3,jdbcType=DECIMAL}, 
+      #{percentageSangong3,jdbcType=DECIMAL}, #{shuqiang3,jdbcType=DECIMAL}, #{jineng3,jdbcType=DECIMAL}, 
+      #{dengji3,jdbcType=VARCHAR}, #{lengque3,jdbcType=DECIMAL}, #{fixedPower3,jdbcType=DECIMAL}, 
+      #{fixedIntelligence3,jdbcType=DECIMAL}, #{huang5,jdbcType=DECIMAL}, #{huangzhui5,jdbcType=DECIMAL}, 
+      #{bao5,jdbcType=DECIMAL}, #{baozhui5,jdbcType=DECIMAL}, #{bai5,jdbcType=DECIMAL}, 
+      #{shubai5,jdbcType=DECIMAL}, #{percentageLizhi5,jdbcType=DECIMAL}, #{zuizhong5,jdbcType=DECIMAL}, 
+      #{percentageSangong5,jdbcType=DECIMAL}, #{shuqiang5,jdbcType=DECIMAL}, #{jineng5,jdbcType=DECIMAL}, 
+      #{dengji5,jdbcType=VARCHAR}, #{lengque5,jdbcType=DECIMAL}, #{fixedPower5,jdbcType=DECIMAL}, 
+      #{fixedIntelligence5,jdbcType=DECIMAL}, #{modifyTime,jdbcType=TIMESTAMP}, #{describtion,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.jbgz.dnfcomputer.model.Suit" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into suit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null and name != ''">
+        `name`,
+      </if>
+      <if test="huang2 != null">
+        huang2,
+      </if>
+      <if test="huangzhui2 != null">
+        huangzhui2,
+      </if>
+      <if test="bao2 != null">
+        bao2,
+      </if>
+      <if test="baozhui2 != null">
+        baozhui2,
+      </if>
+      <if test="bai2 != null">
+        bai2,
+      </if>
+      <if test="shubai2 != null">
+        shubai2,
+      </if>
+      <if test="percentageLizhi2 != null">
+        percentage_lizhi2,
+      </if>
+      <if test="zuizhong2 != null">
+        zuizhong2,
+      </if>
+      <if test="percentageSangong2 != null">
+        percentage_sangong2,
+      </if>
+      <if test="shuqiang2 != null">
+        shuqiang2,
+      </if>
+      <if test="jineng2 != null">
+        jineng2,
+      </if>
+      <if test="dengji2 != null and dengji2 != ''">
+        dengji2,
+      </if>
+      <if test="lengque2 != null">
+        lengque2,
+      </if>
+      <if test="fixedPower2 != null">
+        fixed_power2,
+      </if>
+      <if test="fixedIntelligence2 != null">
+        fixed_intelligence2,
+      </if>
+      <if test="huang3 != null">
+        huang3,
+      </if>
+      <if test="huangzhui3 != null">
+        huangzhui3,
+      </if>
+      <if test="bao3 != null">
+        bao3,
+      </if>
+      <if test="baozhui3 != null">
+        baozhui3,
+      </if>
+      <if test="bai3 != null">
+        bai3,
+      </if>
+      <if test="shubai3 != null">
+        shubai3,
+      </if>
+      <if test="percentageLizhi3 != null">
+        percentage_lizhi3,
+      </if>
+      <if test="zuizhong3 != null">
+        zuizhong3,
+      </if>
+      <if test="percentageSangong3 != null">
+        percentage_sangong3,
+      </if>
+      <if test="shuqiang3 != null">
+        shuqiang3,
+      </if>
+      <if test="jineng3 != null">
+        jineng3,
+      </if>
+      <if test="dengji3 != null and dengji3 != ''">
+        dengji3,
+      </if>
+      <if test="lengque3 != null">
+        lengque3,
+      </if>
+      <if test="fixedPower3 != null">
+        fixed_power3,
+      </if>
+      <if test="fixedIntelligence3 != null">
+        fixed_intelligence3,
+      </if>
+      <if test="huang5 != null">
+        huang5,
+      </if>
+      <if test="huangzhui5 != null">
+        huangzhui5,
+      </if>
+      <if test="bao5 != null">
+        bao5,
+      </if>
+      <if test="baozhui5 != null">
+        baozhui5,
+      </if>
+      <if test="bai5 != null">
+        bai5,
+      </if>
+      <if test="shubai5 != null">
+        shubai5,
+      </if>
+      <if test="percentageLizhi5 != null">
+        percentage_lizhi5,
+      </if>
+      <if test="zuizhong5 != null">
+        zuizhong5,
+      </if>
+      <if test="percentageSangong5 != null">
+        percentage_sangong5,
+      </if>
+      <if test="shuqiang5 != null">
+        shuqiang5,
+      </if>
+      <if test="jineng5 != null">
+        jineng5,
+      </if>
+      <if test="dengji5 != null and dengji5 != ''">
+        dengji5,
+      </if>
+      <if test="lengque5 != null">
+        lengque5,
+      </if>
+      <if test="fixedPower5 != null">
+        fixed_power5,
+      </if>
+      <if test="fixedIntelligence5 != null">
+        fixed_intelligence5,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="describtion != null and describtion != ''">
+        describtion,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null and name != ''">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="huang2 != null">
+        #{huang2,jdbcType=DECIMAL},
+      </if>
+      <if test="huangzhui2 != null">
+        #{huangzhui2,jdbcType=DECIMAL},
+      </if>
+      <if test="bao2 != null">
+        #{bao2,jdbcType=DECIMAL},
+      </if>
+      <if test="baozhui2 != null">
+        #{baozhui2,jdbcType=DECIMAL},
+      </if>
+      <if test="bai2 != null">
+        #{bai2,jdbcType=DECIMAL},
+      </if>
+      <if test="shubai2 != null">
+        #{shubai2,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageLizhi2 != null">
+        #{percentageLizhi2,jdbcType=DECIMAL},
+      </if>
+      <if test="zuizhong2 != null">
+        #{zuizhong2,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageSangong2 != null">
+        #{percentageSangong2,jdbcType=DECIMAL},
+      </if>
+      <if test="shuqiang2 != null">
+        #{shuqiang2,jdbcType=DECIMAL},
+      </if>
+      <if test="jineng2 != null">
+        #{jineng2,jdbcType=DECIMAL},
+      </if>
+      <if test="dengji2 != null and dengji2 != ''">
+        #{dengji2,jdbcType=VARCHAR},
+      </if>
+      <if test="lengque2 != null">
+        #{lengque2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPower2 != null">
+        #{fixedPower2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedIntelligence2 != null">
+        #{fixedIntelligence2,jdbcType=DECIMAL},
+      </if>
+      <if test="huang3 != null">
+        #{huang3,jdbcType=DECIMAL},
+      </if>
+      <if test="huangzhui3 != null">
+        #{huangzhui3,jdbcType=DECIMAL},
+      </if>
+      <if test="bao3 != null">
+        #{bao3,jdbcType=DECIMAL},
+      </if>
+      <if test="baozhui3 != null">
+        #{baozhui3,jdbcType=DECIMAL},
+      </if>
+      <if test="bai3 != null">
+        #{bai3,jdbcType=DECIMAL},
+      </if>
+      <if test="shubai3 != null">
+        #{shubai3,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageLizhi3 != null">
+        #{percentageLizhi3,jdbcType=DECIMAL},
+      </if>
+      <if test="zuizhong3 != null">
+        #{zuizhong3,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageSangong3 != null">
+        #{percentageSangong3,jdbcType=DECIMAL},
+      </if>
+      <if test="shuqiang3 != null">
+        #{shuqiang3,jdbcType=DECIMAL},
+      </if>
+      <if test="jineng3 != null">
+        #{jineng3,jdbcType=DECIMAL},
+      </if>
+      <if test="dengji3 != null and dengji3 != ''">
+        #{dengji3,jdbcType=VARCHAR},
+      </if>
+      <if test="lengque3 != null">
+        #{lengque3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPower3 != null">
+        #{fixedPower3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedIntelligence3 != null">
+        #{fixedIntelligence3,jdbcType=DECIMAL},
+      </if>
+      <if test="huang5 != null">
+        #{huang5,jdbcType=DECIMAL},
+      </if>
+      <if test="huangzhui5 != null">
+        #{huangzhui5,jdbcType=DECIMAL},
+      </if>
+      <if test="bao5 != null">
+        #{bao5,jdbcType=DECIMAL},
+      </if>
+      <if test="baozhui5 != null">
+        #{baozhui5,jdbcType=DECIMAL},
+      </if>
+      <if test="bai5 != null">
+        #{bai5,jdbcType=DECIMAL},
+      </if>
+      <if test="shubai5 != null">
+        #{shubai5,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageLizhi5 != null">
+        #{percentageLizhi5,jdbcType=DECIMAL},
+      </if>
+      <if test="zuizhong5 != null">
+        #{zuizhong5,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageSangong5 != null">
+        #{percentageSangong5,jdbcType=DECIMAL},
+      </if>
+      <if test="shuqiang5 != null">
+        #{shuqiang5,jdbcType=DECIMAL},
+      </if>
+      <if test="jineng5 != null">
+        #{jineng5,jdbcType=DECIMAL},
+      </if>
+      <if test="dengji5 != null and dengji5 != ''">
+        #{dengji5,jdbcType=VARCHAR},
+      </if>
+      <if test="lengque5 != null">
+        #{lengque5,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPower5 != null">
+        #{fixedPower5,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedIntelligence5 != null">
+        #{fixedIntelligence5,jdbcType=DECIMAL},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="describtion != null and describtion != ''">
+        #{describtion,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jbgz.dnfcomputer.model.Suit">
+    <!--@mbg.generated-->
+    update suit
+    <set>
+      <if test="name != null and name != ''">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="huang2 != null">
+        huang2 = #{huang2,jdbcType=DECIMAL},
+      </if>
+      <if test="huangzhui2 != null">
+        huangzhui2 = #{huangzhui2,jdbcType=DECIMAL},
+      </if>
+      <if test="bao2 != null">
+        bao2 = #{bao2,jdbcType=DECIMAL},
+      </if>
+      <if test="baozhui2 != null">
+        baozhui2 = #{baozhui2,jdbcType=DECIMAL},
+      </if>
+      <if test="bai2 != null">
+        bai2 = #{bai2,jdbcType=DECIMAL},
+      </if>
+      <if test="shubai2 != null">
+        shubai2 = #{shubai2,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageLizhi2 != null">
+        percentage_lizhi2 = #{percentageLizhi2,jdbcType=DECIMAL},
+      </if>
+      <if test="zuizhong2 != null">
+        zuizhong2 = #{zuizhong2,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageSangong2 != null">
+        percentage_sangong2 = #{percentageSangong2,jdbcType=DECIMAL},
+      </if>
+      <if test="shuqiang2 != null">
+        shuqiang2 = #{shuqiang2,jdbcType=DECIMAL},
+      </if>
+      <if test="jineng2 != null">
+        jineng2 = #{jineng2,jdbcType=DECIMAL},
+      </if>
+      <if test="dengji2 != null and dengji2 != ''">
+        dengji2 = #{dengji2,jdbcType=VARCHAR},
+      </if>
+      <if test="lengque2 != null">
+        lengque2 = #{lengque2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPower2 != null">
+        fixed_power2 = #{fixedPower2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedIntelligence2 != null">
+        fixed_intelligence2 = #{fixedIntelligence2,jdbcType=DECIMAL},
+      </if>
+      <if test="huang3 != null">
+        huang3 = #{huang3,jdbcType=DECIMAL},
+      </if>
+      <if test="huangzhui3 != null">
+        huangzhui3 = #{huangzhui3,jdbcType=DECIMAL},
+      </if>
+      <if test="bao3 != null">
+        bao3 = #{bao3,jdbcType=DECIMAL},
+      </if>
+      <if test="baozhui3 != null">
+        baozhui3 = #{baozhui3,jdbcType=DECIMAL},
+      </if>
+      <if test="bai3 != null">
+        bai3 = #{bai3,jdbcType=DECIMAL},
+      </if>
+      <if test="shubai3 != null">
+        shubai3 = #{shubai3,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageLizhi3 != null">
+        percentage_lizhi3 = #{percentageLizhi3,jdbcType=DECIMAL},
+      </if>
+      <if test="zuizhong3 != null">
+        zuizhong3 = #{zuizhong3,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageSangong3 != null">
+        percentage_sangong3 = #{percentageSangong3,jdbcType=DECIMAL},
+      </if>
+      <if test="shuqiang3 != null">
+        shuqiang3 = #{shuqiang3,jdbcType=DECIMAL},
+      </if>
+      <if test="jineng3 != null">
+        jineng3 = #{jineng3,jdbcType=DECIMAL},
+      </if>
+      <if test="dengji3 != null and dengji3 != ''">
+        dengji3 = #{dengji3,jdbcType=VARCHAR},
+      </if>
+      <if test="lengque3 != null">
+        lengque3 = #{lengque3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPower3 != null">
+        fixed_power3 = #{fixedPower3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedIntelligence3 != null">
+        fixed_intelligence3 = #{fixedIntelligence3,jdbcType=DECIMAL},
+      </if>
+      <if test="huang5 != null">
+        huang5 = #{huang5,jdbcType=DECIMAL},
+      </if>
+      <if test="huangzhui5 != null">
+        huangzhui5 = #{huangzhui5,jdbcType=DECIMAL},
+      </if>
+      <if test="bao5 != null">
+        bao5 = #{bao5,jdbcType=DECIMAL},
+      </if>
+      <if test="baozhui5 != null">
+        baozhui5 = #{baozhui5,jdbcType=DECIMAL},
+      </if>
+      <if test="bai5 != null">
+        bai5 = #{bai5,jdbcType=DECIMAL},
+      </if>
+      <if test="shubai5 != null">
+        shubai5 = #{shubai5,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageLizhi5 != null">
+        percentage_lizhi5 = #{percentageLizhi5,jdbcType=DECIMAL},
+      </if>
+      <if test="zuizhong5 != null">
+        zuizhong5 = #{zuizhong5,jdbcType=DECIMAL},
+      </if>
+      <if test="percentageSangong5 != null">
+        percentage_sangong5 = #{percentageSangong5,jdbcType=DECIMAL},
+      </if>
+      <if test="shuqiang5 != null">
+        shuqiang5 = #{shuqiang5,jdbcType=DECIMAL},
+      </if>
+      <if test="jineng5 != null">
+        jineng5 = #{jineng5,jdbcType=DECIMAL},
+      </if>
+      <if test="dengji5 != null and dengji5 != ''">
+        dengji5 = #{dengji5,jdbcType=VARCHAR},
+      </if>
+      <if test="lengque5 != null">
+        lengque5 = #{lengque5,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPower5 != null">
+        fixed_power5 = #{fixedPower5,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedIntelligence5 != null">
+        fixed_intelligence5 = #{fixedIntelligence5,jdbcType=DECIMAL},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="describtion != null and describtion != ''">
+        describtion = #{describtion,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jbgz.dnfcomputer.model.Suit">
+    <!--@mbg.generated-->
+    update suit
+    set `name` = #{name,jdbcType=VARCHAR},
+      huang2 = #{huang2,jdbcType=DECIMAL},
+      huangzhui2 = #{huangzhui2,jdbcType=DECIMAL},
+      bao2 = #{bao2,jdbcType=DECIMAL},
+      baozhui2 = #{baozhui2,jdbcType=DECIMAL},
+      bai2 = #{bai2,jdbcType=DECIMAL},
+      shubai2 = #{shubai2,jdbcType=DECIMAL},
+      percentage_lizhi2 = #{percentageLizhi2,jdbcType=DECIMAL},
+      zuizhong2 = #{zuizhong2,jdbcType=DECIMAL},
+      percentage_sangong2 = #{percentageSangong2,jdbcType=DECIMAL},
+      shuqiang2 = #{shuqiang2,jdbcType=DECIMAL},
+      jineng2 = #{jineng2,jdbcType=DECIMAL},
+      dengji2 = #{dengji2,jdbcType=VARCHAR},
+      lengque2 = #{lengque2,jdbcType=DECIMAL},
+      fixed_power2 = #{fixedPower2,jdbcType=DECIMAL},
+      fixed_intelligence2 = #{fixedIntelligence2,jdbcType=DECIMAL},
+      huang3 = #{huang3,jdbcType=DECIMAL},
+      huangzhui3 = #{huangzhui3,jdbcType=DECIMAL},
+      bao3 = #{bao3,jdbcType=DECIMAL},
+      baozhui3 = #{baozhui3,jdbcType=DECIMAL},
+      bai3 = #{bai3,jdbcType=DECIMAL},
+      shubai3 = #{shubai3,jdbcType=DECIMAL},
+      percentage_lizhi3 = #{percentageLizhi3,jdbcType=DECIMAL},
+      zuizhong3 = #{zuizhong3,jdbcType=DECIMAL},
+      percentage_sangong3 = #{percentageSangong3,jdbcType=DECIMAL},
+      shuqiang3 = #{shuqiang3,jdbcType=DECIMAL},
+      jineng3 = #{jineng3,jdbcType=DECIMAL},
+      dengji3 = #{dengji3,jdbcType=VARCHAR},
+      lengque3 = #{lengque3,jdbcType=DECIMAL},
+      fixed_power3 = #{fixedPower3,jdbcType=DECIMAL},
+      fixed_intelligence3 = #{fixedIntelligence3,jdbcType=DECIMAL},
+      huang5 = #{huang5,jdbcType=DECIMAL},
+      huangzhui5 = #{huangzhui5,jdbcType=DECIMAL},
+      bao5 = #{bao5,jdbcType=DECIMAL},
+      baozhui5 = #{baozhui5,jdbcType=DECIMAL},
+      bai5 = #{bai5,jdbcType=DECIMAL},
+      shubai5 = #{shubai5,jdbcType=DECIMAL},
+      percentage_lizhi5 = #{percentageLizhi5,jdbcType=DECIMAL},
+      zuizhong5 = #{zuizhong5,jdbcType=DECIMAL},
+      percentage_sangong5 = #{percentageSangong5,jdbcType=DECIMAL},
+      shuqiang5 = #{shuqiang5,jdbcType=DECIMAL},
+      jineng5 = #{jineng5,jdbcType=DECIMAL},
+      dengji5 = #{dengji5,jdbcType=VARCHAR},
+      lengque5 = #{lengque5,jdbcType=DECIMAL},
+      fixed_power5 = #{fixedPower5,jdbcType=DECIMAL},
+      fixed_intelligence5 = #{fixedIntelligence5,jdbcType=DECIMAL},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      describtion = #{describtion,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
