@@ -18,7 +18,9 @@ public interface EquipService {
     int updateByPrimaryKeySelective(Equip record);
 
     int updateByPrimaryKey(Equip record);
-    List<Equip> selectByList( List<Equip> list);
+
+    List<Equip> selectByList(List<Equip> list);
 
 }
+
 

@@ -1,11 +1,28 @@
 package com.jbgz.dnfcomputer.mapper;
 
-import com.jbgz.dnfcomputer.model.Equip;
-import org.apache.ibatis.annotations.Param;
+import com.jbgz.dnfcomputer.model.Equip;import org.apache.ibatis.annotations.Param;import java.util.List;
 
-import java.util.List;
-
-
+/**
+ * @Location:com.jbgz.dnfcomputer.mapper
+ * @Auth:ygr
+ * @DATE:2020/6/29 16:27
+ * <p>
+ * .                ,]++++++++]`
+ * .              ]++o**=++++++++\`
+ * .          ,+++++++o\]**[*=++++\
+ * .         ++++++++++++++++oo++++^
+ * .        =+++++++++++++++++++++++
+ * .       =+/`,++o++oo++++++++++++++\
+ * .        + +\++\****\++=+++++++\++++
+ * .           \\ \\//`*]o+++++oo/ /+++`
+ * .           ,+`   [\++++++[`,[+\=+++^
+ * .           +`        ++]]++    ,++^
+ * .          =+         \`         +[
+ * .           +`         ,+`
+ * .            +`  ]/+++++\/+
+ * .             =+]=^
+ * .            *,[[
+ */
 public interface EquipMapper {
     int deleteByPrimaryKey(Integer id);
 

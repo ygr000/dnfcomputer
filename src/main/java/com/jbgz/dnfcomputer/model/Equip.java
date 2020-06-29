@@ -3,6 +3,27 @@ package com.jbgz.dnfcomputer.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @Location:com.jbgz.dnfcomputer.model
+ * @Auth:ygr
+ * @DATE:2020/6/29 16:27
+ * <p>
+ * .                ,]++++++++]`
+ * .              ]++o**=++++++++\`
+ * .          ,+++++++o\]**[*=++++\
+ * .         ++++++++++++++++oo++++^
+ * .        =+++++++++++++++++++++++
+ * .       =+/`,++o++oo++++++++++++++\
+ * .        + +\++\****\++=+++++++\++++
+ * .           \\ \\//`*]o+++++oo/ /+++`
+ * .           ,+`   [\++++++[`,[+\=+++^
+ * .           +`        ++]]++    ,++^
+ * .          =+         \`         +[
+ * .           +`         ,+`
+ * .            +`  ]/+++++\/+
+ * .             =+]=^
+ * .            *,[[
+ */
 public class Equip {
     private Integer id;
 
@@ -41,6 +62,8 @@ public class Equip {
     private BigDecimal fixedIntelligence;
 
     private Date modifyTime;
+
+    private String equipType;
 
     public Integer getId() {
         return id;
@@ -194,6 +217,14 @@ public class Equip {
         this.modifyTime = modifyTime;
     }
 
+    public String getEquipType() {
+        return equipType;
+    }
+
+    public void setEquipType(String equipType) {
+        this.equipType = equipType;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -219,6 +250,7 @@ public class Equip {
         sb.append(", fixedPower=").append(fixedPower);
         sb.append(", fixedIntelligence=").append(fixedIntelligence);
         sb.append(", modifyTime=").append(modifyTime);
+        sb.append(", equipType=").append(equipType);
         sb.append("]");
         return sb.toString();
     }

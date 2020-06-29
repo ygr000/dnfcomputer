@@ -42,6 +42,7 @@ CREATE TABLE `equip` (
   `fixed_power` decimal(10,2) DEFAULT NULL,
   `fixed_intelligence` decimal(10,2) DEFAULT NULL,
   `modify_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `equip_type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -52,7 +53,7 @@ CREATE TABLE `equip` (
 
 LOCK TABLES `equip` WRITE;
 /*!40000 ALTER TABLE `equip` DISABLE KEYS */;
-INSERT INTO `equip` (`id`, `suit_id`, `name`, `huang`, `huangzhui`, `bao`, `baozhui`, `bai`, `shubai`, `percentage_lizhi`, `zuizhong`, `percentage_sangong`, `shuqiang`, `jineng`, `dengji`, `lengque`, `fixed_power`, `fixed_intelligence`, `modify_time`) VALUES (1,0,NULL,100.00,101.11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2020-06-23 09:17:28');
+INSERT INTO `equip` (`id`, `suit_id`, `name`, `huang`, `huangzhui`, `bao`, `baozhui`, `bai`, `shubai`, `percentage_lizhi`, `zuizhong`, `percentage_sangong`, `shuqiang`, `jineng`, `dengji`, `lengque`, `fixed_power`, `fixed_intelligence`, `modify_time`, `equip_type`) VALUES (1,0,NULL,100.00,101.11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2020-06-23 09:17:28',NULL);
 /*!40000 ALTER TABLE `equip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-29 16:08:46
+-- Dump completed on 2020-06-29 16:28:14
