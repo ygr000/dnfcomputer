@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * @Location:com.jbgz.dnfcomputer.model
  * @Auth:ygr
- * @DATE:2020/6/29 16:27
+ * @DATE:2020/6/29 19:24
  * <p>
  * .                ,]++++++++]`
  * .              ]++o**=++++++++\`
@@ -53,17 +53,52 @@ public class Equip {
 
     private BigDecimal jineng;
 
-    private String dengji;
+    private BigDecimal fixedIntelligence;
 
     private BigDecimal lengque;
 
     private BigDecimal fixedPower;
 
-    private BigDecimal fixedIntelligence;
+    private String dengji;
 
     private Date modifyTime;
 
+    /**
+     * 1：头肩
+     * 2：上衣
+     * 3：腰带
+     * 4：下装
+     * 5：鞋
+     * 6：武器
+     * 7：称号
+     * 8：手镯
+     * 9：项链
+     * 10：戒指
+     * 11：辅助装备
+     * 12：魔法师
+     * 13：耳环
+     * 14：宠物
+     * 15：宠物装备
+     * ...
+     */
     private String equipType;
+
+    /**
+     * 史诗，神器
+     */
+    private String equipLevel;
+
+    /**
+     * 固定 物理攻击
+     */
+    private BigDecimal fixedPhysics;
+
+    /**
+     * guding mofa
+     */
+    private BigDecimal fixedMagic;
+
+    private BigDecimal fixedGushang;
 
     public Integer getId() {
         return id;
@@ -177,12 +212,12 @@ public class Equip {
         this.jineng = jineng;
     }
 
-    public String getDengji() {
-        return dengji;
+    public BigDecimal getFixedIntelligence() {
+        return fixedIntelligence;
     }
 
-    public void setDengji(String dengji) {
-        this.dengji = dengji;
+    public void setFixedIntelligence(BigDecimal fixedIntelligence) {
+        this.fixedIntelligence = fixedIntelligence;
     }
 
     public BigDecimal getLengque() {
@@ -201,12 +236,12 @@ public class Equip {
         this.fixedPower = fixedPower;
     }
 
-    public BigDecimal getFixedIntelligence() {
-        return fixedIntelligence;
+    public String getDengji() {
+        return dengji;
     }
 
-    public void setFixedIntelligence(BigDecimal fixedIntelligence) {
-        this.fixedIntelligence = fixedIntelligence;
+    public void setDengji(String dengji) {
+        this.dengji = dengji;
     }
 
     public Date getModifyTime() {
@@ -223,6 +258,38 @@ public class Equip {
 
     public void setEquipType(String equipType) {
         this.equipType = equipType;
+    }
+
+    public String getEquipLevel() {
+        return equipLevel;
+    }
+
+    public void setEquipLevel(String equipLevel) {
+        this.equipLevel = equipLevel;
+    }
+
+    public BigDecimal getFixedPhysics() {
+        return fixedPhysics;
+    }
+
+    public void setFixedPhysics(BigDecimal fixedPhysics) {
+        this.fixedPhysics = fixedPhysics;
+    }
+
+    public BigDecimal getFixedMagic() {
+        return fixedMagic;
+    }
+
+    public void setFixedMagic(BigDecimal fixedMagic) {
+        this.fixedMagic = fixedMagic;
+    }
+
+    public BigDecimal getFixedGushang() {
+        return fixedGushang;
+    }
+
+    public void setFixedGushang(BigDecimal fixedGushang) {
+        this.fixedGushang = fixedGushang;
     }
 
     @Override
@@ -245,12 +312,16 @@ public class Equip {
         sb.append(", percentageSangong=").append(percentageSangong);
         sb.append(", shuqiang=").append(shuqiang);
         sb.append(", jineng=").append(jineng);
-        sb.append(", dengji=").append(dengji);
+        sb.append(", fixedIntelligence=").append(fixedIntelligence);
         sb.append(", lengque=").append(lengque);
         sb.append(", fixedPower=").append(fixedPower);
-        sb.append(", fixedIntelligence=").append(fixedIntelligence);
+        sb.append(", dengji=").append(dengji);
         sb.append(", modifyTime=").append(modifyTime);
         sb.append(", equipType=").append(equipType);
+        sb.append(", equipLevel=").append(equipLevel);
+        sb.append(", fixedPhysics=").append(fixedPhysics);
+        sb.append(", fixedMagic=").append(fixedMagic);
+        sb.append(", fixedGushang=").append(fixedGushang);
         sb.append("]");
         return sb.toString();
     }

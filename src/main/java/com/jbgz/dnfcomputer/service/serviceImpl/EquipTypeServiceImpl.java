@@ -2,16 +2,13 @@ package com.jbgz.dnfcomputer.service.serviceImpl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-import com.jbgz.dnfcomputer.model.Suit;
-import com.jbgz.dnfcomputer.mapper.SuitMapper;
-import com.jbgz.dnfcomputer.service.SuitService;
-
-import java.util.List;
-
+import com.jbgz.dnfcomputer.model.EquipType;
+import com.jbgz.dnfcomputer.mapper.EquipTypeMapper;
+import com.jbgz.dnfcomputer.service.EquipTypeService;
 /**
  * @Location:com.jbgz.dnfcomputer.service.serviceImpl
  * @Auth:ygr
- * @DATE:2020/6/29 16:03
+ * @DATE:2020/6/29 19:29
  * 
  * .                ,]++++++++]`                
  * .              ]++o**=++++++++\`             
@@ -30,44 +27,39 @@ import java.util.List;
  * .            *,[[ 
  */
 @Service
-public class SuitServiceImpl implements SuitService{
+public class EquipTypeServiceImpl implements EquipTypeService{
 
     @Resource
-    private SuitMapper suitMapper;
+    private EquipTypeMapper equipTypeMapper;
 
     @Override
     public int deleteByPrimaryKey(Integer id) {
-        return suitMapper.deleteByPrimaryKey(id);
+        return equipTypeMapper.deleteByPrimaryKey(id);
     }
 
     @Override
-    public int insert(Suit record) {
-        return suitMapper.insert(record);
+    public int insert(EquipType record) {
+        return equipTypeMapper.insert(record);
     }
 
     @Override
-    public int insertSelective(Suit record) {
-        return suitMapper.insertSelective(record);
+    public int insertSelective(EquipType record) {
+        return equipTypeMapper.insertSelective(record);
     }
 
     @Override
-    public Suit selectByPrimaryKey(Integer id) {
-        return suitMapper.selectByPrimaryKey(id);
+    public EquipType selectByPrimaryKey(Integer id) {
+        return equipTypeMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(Suit record) {
-        return suitMapper.updateByPrimaryKeySelective(record);
+    public int updateByPrimaryKeySelective(EquipType record) {
+        return equipTypeMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
-    public int updateByPrimaryKey(Suit record) {
-        return suitMapper.updateByPrimaryKey(record);
-    }
-
-    @Override
-    public List<Suit> selectByName(String name) {
-        return suitMapper.selectByName(name);
+    public int updateByPrimaryKey(EquipType record) {
+        return equipTypeMapper.updateByPrimaryKey(record);
     }
 
 }

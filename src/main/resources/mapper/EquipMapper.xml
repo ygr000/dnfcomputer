@@ -18,18 +18,22 @@
     <result column="percentage_sangong" jdbcType="DECIMAL" property="percentageSangong" />
     <result column="shuqiang" jdbcType="DECIMAL" property="shuqiang" />
     <result column="jineng" jdbcType="DECIMAL" property="jineng" />
-    <result column="dengji" jdbcType="VARCHAR" property="dengji" />
+    <result column="fixed_intelligence" jdbcType="DECIMAL" property="fixedIntelligence" />
     <result column="lengque" jdbcType="DECIMAL" property="lengque" />
     <result column="fixed_power" jdbcType="DECIMAL" property="fixedPower" />
-    <result column="fixed_intelligence" jdbcType="DECIMAL" property="fixedIntelligence" />
+    <result column="dengji" jdbcType="VARCHAR" property="dengji" />
     <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
     <result column="equip_type" jdbcType="VARCHAR" property="equipType" />
+    <result column="equip_level" jdbcType="VARCHAR" property="equipLevel" />
+    <result column="fixed_physics" jdbcType="DECIMAL" property="fixedPhysics" />
+    <result column="fixed_magic" jdbcType="DECIMAL" property="fixedMagic" />
+    <result column="fixed_gushang" jdbcType="DECIMAL" property="fixedGushang" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
     id, suit_id, `name`, huang, huangzhui, bao, baozhui, bai, shubai, percentage_lizhi, 
-    zuizhong, percentage_sangong, shuqiang, jineng, dengji, lengque, fixed_power, fixed_intelligence, 
-    modify_time, equip_type
+    zuizhong, percentage_sangong, shuqiang, jineng, fixed_intelligence, lengque, fixed_power, 
+    dengji, modify_time, equip_type, equip_level, fixed_physics, fixed_magic, fixed_gushang
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -49,16 +53,18 @@
       huangzhui, bao, baozhui, 
       bai, shubai, percentage_lizhi, 
       zuizhong, percentage_sangong, shuqiang, 
-      jineng, dengji, lengque, 
-      fixed_power, fixed_intelligence, modify_time, 
-      equip_type)
+      jineng, fixed_intelligence, lengque, 
+      fixed_power, dengji, modify_time, 
+      equip_type, equip_level, fixed_physics, 
+      fixed_magic, fixed_gushang)
     values (#{suitId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{huang,jdbcType=DECIMAL}, 
       #{huangzhui,jdbcType=DECIMAL}, #{bao,jdbcType=DECIMAL}, #{baozhui,jdbcType=DECIMAL}, 
       #{bai,jdbcType=DECIMAL}, #{shubai,jdbcType=DECIMAL}, #{percentageLizhi,jdbcType=DECIMAL}, 
       #{zuizhong,jdbcType=DECIMAL}, #{percentageSangong,jdbcType=DECIMAL}, #{shuqiang,jdbcType=DECIMAL}, 
-      #{jineng,jdbcType=DECIMAL}, #{dengji,jdbcType=VARCHAR}, #{lengque,jdbcType=DECIMAL}, 
-      #{fixedPower,jdbcType=DECIMAL}, #{fixedIntelligence,jdbcType=DECIMAL}, #{modifyTime,jdbcType=TIMESTAMP}, 
-      #{equipType,jdbcType=VARCHAR})
+      #{jineng,jdbcType=DECIMAL}, #{fixedIntelligence,jdbcType=DECIMAL}, #{lengque,jdbcType=DECIMAL}, 
+      #{fixedPower,jdbcType=DECIMAL}, #{dengji,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{equipType,jdbcType=VARCHAR}, #{equipLevel,jdbcType=VARCHAR}, #{fixedPhysics,jdbcType=DECIMAL}, 
+      #{fixedMagic,jdbcType=DECIMAL}, #{fixedGushang,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.jbgz.dnfcomputer.model.Equip" useGeneratedKeys="true">
     <!--@mbg.generated-->
@@ -103,8 +109,8 @@
       <if test="jineng != null">
         jineng,
       </if>
-      <if test="dengji != null and dengji != ''">
-        dengji,
+      <if test="fixedIntelligence != null">
+        fixed_intelligence,
       </if>
       <if test="lengque != null">
         lengque,
@@ -112,14 +118,26 @@
       <if test="fixedPower != null">
         fixed_power,
       </if>
-      <if test="fixedIntelligence != null">
-        fixed_intelligence,
+      <if test="dengji != null and dengji != ''">
+        dengji,
       </if>
       <if test="modifyTime != null">
         modify_time,
       </if>
       <if test="equipType != null and equipType != ''">
         equip_type,
+      </if>
+      <if test="equipLevel != null and equipLevel != ''">
+        equip_level,
+      </if>
+      <if test="fixedPhysics != null">
+        fixed_physics,
+      </if>
+      <if test="fixedMagic != null">
+        fixed_magic,
+      </if>
+      <if test="fixedGushang != null">
+        fixed_gushang,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -162,8 +180,8 @@
       <if test="jineng != null">
         #{jineng,jdbcType=DECIMAL},
       </if>
-      <if test="dengji != null and dengji != ''">
-        #{dengji,jdbcType=VARCHAR},
+      <if test="fixedIntelligence != null">
+        #{fixedIntelligence,jdbcType=DECIMAL},
       </if>
       <if test="lengque != null">
         #{lengque,jdbcType=DECIMAL},
@@ -171,14 +189,26 @@
       <if test="fixedPower != null">
         #{fixedPower,jdbcType=DECIMAL},
       </if>
-      <if test="fixedIntelligence != null">
-        #{fixedIntelligence,jdbcType=DECIMAL},
+      <if test="dengji != null and dengji != ''">
+        #{dengji,jdbcType=VARCHAR},
       </if>
       <if test="modifyTime != null">
         #{modifyTime,jdbcType=TIMESTAMP},
       </if>
       <if test="equipType != null and equipType != ''">
         #{equipType,jdbcType=VARCHAR},
+      </if>
+      <if test="equipLevel != null and equipLevel != ''">
+        #{equipLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedPhysics != null">
+        #{fixedPhysics,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedMagic != null">
+        #{fixedMagic,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedGushang != null">
+        #{fixedGushang,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
@@ -225,8 +255,8 @@
       <if test="jineng != null">
         jineng = #{jineng,jdbcType=DECIMAL},
       </if>
-      <if test="dengji != null and dengji != ''">
-        dengji = #{dengji,jdbcType=VARCHAR},
+      <if test="fixedIntelligence != null">
+        fixed_intelligence = #{fixedIntelligence,jdbcType=DECIMAL},
       </if>
       <if test="lengque != null">
         lengque = #{lengque,jdbcType=DECIMAL},
@@ -234,14 +264,26 @@
       <if test="fixedPower != null">
         fixed_power = #{fixedPower,jdbcType=DECIMAL},
       </if>
-      <if test="fixedIntelligence != null">
-        fixed_intelligence = #{fixedIntelligence,jdbcType=DECIMAL},
+      <if test="dengji != null and dengji != ''">
+        dengji = #{dengji,jdbcType=VARCHAR},
       </if>
       <if test="modifyTime != null">
         modify_time = #{modifyTime,jdbcType=TIMESTAMP},
       </if>
       <if test="equipType != null and equipType != ''">
         equip_type = #{equipType,jdbcType=VARCHAR},
+      </if>
+      <if test="equipLevel != null and equipLevel != ''">
+        equip_level = #{equipLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedPhysics != null">
+        fixed_physics = #{fixedPhysics,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedMagic != null">
+        fixed_magic = #{fixedMagic,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedGushang != null">
+        fixed_gushang = #{fixedGushang,jdbcType=DECIMAL},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -262,12 +304,16 @@
       percentage_sangong = #{percentageSangong,jdbcType=DECIMAL},
       shuqiang = #{shuqiang,jdbcType=DECIMAL},
       jineng = #{jineng,jdbcType=DECIMAL},
-      dengji = #{dengji,jdbcType=VARCHAR},
+      fixed_intelligence = #{fixedIntelligence,jdbcType=DECIMAL},
       lengque = #{lengque,jdbcType=DECIMAL},
       fixed_power = #{fixedPower,jdbcType=DECIMAL},
-      fixed_intelligence = #{fixedIntelligence,jdbcType=DECIMAL},
+      dengji = #{dengji,jdbcType=VARCHAR},
       modify_time = #{modifyTime,jdbcType=TIMESTAMP},
-      equip_type = #{equipType,jdbcType=VARCHAR}
+      equip_type = #{equipType,jdbcType=VARCHAR},
+      equip_level = #{equipLevel,jdbcType=VARCHAR},
+      fixed_physics = #{fixedPhysics,jdbcType=DECIMAL},
+      fixed_magic = #{fixedMagic,jdbcType=DECIMAL},
+      fixed_gushang = #{fixedGushang,jdbcType=DECIMAL}
     where id = #{id,jdbcType=INTEGER}
   </update>
 
@@ -276,7 +322,7 @@
     select
     <include refid="Base_Column_List" />
     from equip
-    <if test="list.size()&gt;0">
+    <if test="list!=null and list.size()&gt;0">
       <where> id in
         <foreach close=")" collection="list" item="item" open="(" separator=",">
           #{item.id,jdbcType=INTEGER}
@@ -284,6 +330,11 @@
       </where>
     </if>
   </select>
-
-
+  <select id="selectByName" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from equip
+    <if test="name != null and name != ''">
+      where name like concat('%',#{name,jdbcType=VARCHAR},'%')
+    </if>
+  </select>
 </mapper>

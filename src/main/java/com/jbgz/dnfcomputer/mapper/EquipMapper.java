@@ -5,7 +5,7 @@ import com.jbgz.dnfcomputer.model.Equip;import org.apache.ibatis.annotations.Par
 /**
  * @Location:com.jbgz.dnfcomputer.mapper
  * @Auth:ygr
- * @DATE:2020/6/29 16:27
+ * @DATE:2020/6/29 19:24
  * <p>
  * .                ,]++++++++]`
  * .              ]++o**=++++++++\`
@@ -37,4 +37,6 @@ public interface EquipMapper {
     int updateByPrimaryKey(Equip record);
 
     List<Equip> selectByList(@Param("list") List<Equip> list);
+
+    List<Equip> selectByName(@Param("name") String name);
 }

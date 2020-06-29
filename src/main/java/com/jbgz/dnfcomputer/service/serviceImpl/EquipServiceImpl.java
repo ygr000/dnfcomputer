@@ -49,7 +49,14 @@ public class EquipServiceImpl implements EquipService {
         return equipMapper.selectByList(list);
     }
 
+    @Override
+    public List<Equip> selectByName(String name) {
+        return equipMapper.selectByName(name);
+    }
+
 }
+
+
 
 
 

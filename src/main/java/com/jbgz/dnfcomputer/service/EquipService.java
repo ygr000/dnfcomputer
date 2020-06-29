@@ -21,6 +21,10 @@ public interface EquipService {
 
     List<Equip> selectByList(List<Equip> list);
 
+    List<Equip> selectByName(String name);
+
 }
+
+
 
 

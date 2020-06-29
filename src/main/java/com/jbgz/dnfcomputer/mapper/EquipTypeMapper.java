@@ -1,13 +1,11 @@
-package com.jbgz.dnfcomputer.service;
+package com.jbgz.dnfcomputer.mapper;
 
-import com.jbgz.dnfcomputer.model.Suit;
-
-import java.util.List;
+import com.jbgz.dnfcomputer.model.EquipType;
 
 /**
- * @Location:com.jbgz.dnfcomputer.service
+ * @Location:com.jbgz.dnfcomputer.mapper
  * @Auth:ygr
- * @DATE:2020/6/29 16:03
+ * @DATE:2020/6/29 19:29
  * 
  * .                ,]++++++++]`                
  * .              ]++o**=++++++++\`             
@@ -25,21 +23,16 @@ import java.util.List;
  * .             =+]=^                          
  * .            *,[[ 
  */
-public interface SuitService{
-
-
+public interface EquipTypeMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Suit record);
+    int insert(EquipType record);
 
-    int insertSelective(Suit record);
+    int insertSelective(EquipType record);
 
-    Suit selectByPrimaryKey(Integer id);
+    EquipType selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Suit record);
+    int updateByPrimaryKeySelective(EquipType record);
 
-    int updateByPrimaryKey(Suit record);
-
-    List<Suit> selectByName(String name);
-
+    int updateByPrimaryKey(EquipType record);
 }

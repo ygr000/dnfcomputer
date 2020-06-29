@@ -1,6 +1,9 @@
 package com.jbgz.dnfcomputer.mapper;
 
 import com.jbgz.dnfcomputer.model.Suit;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @Location:com.jbgz.dnfcomputer.mapper
@@ -35,4 +38,6 @@ public interface SuitMapper {
     int updateByPrimaryKeySelective(Suit record);
 
     int updateByPrimaryKey(Suit record);
+
+    List<Suit> selectByName(@Param("name") String name);
 }

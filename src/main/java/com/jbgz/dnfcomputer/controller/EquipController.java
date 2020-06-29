@@ -23,30 +23,56 @@ public class EquipController {
     private static final Logger log = LoggerFactory.getLogger(EquipController.class);
     @Autowired
     private EquipService equipService;
-    @Autowired
-    private SuitService suitService;
+
+
     @PostMapping("/test")
     @SysLog("ceshivalue111")
-    public Result test(String param1,Integer param2){
-        Equip equip =equipService.selectByPrimaryKey(1);
+    public Result test(String param1, Integer param2) {
+        Equip equip = equipService.selectByPrimaryKey(1);
         log.info(equipService.toString());
         log.info(equip.toString());
-        return new Result(ResultCode.Failed.getCode(),ResultCode.Failed.getDescribe());
-    };
+        return new Result(ResultCode.Failed.getCode(), ResultCode.Failed.getDescribe());
+    }
+
+    ;
+
     @SysLog("ceshivalue222")
     @PostMapping("/getEquipsByIds")
     @ResponseBody
-    public Result getEquipsByIds(@RequestBody JSONObject map){
-        Equip equip =equipService.selectByPrimaryKey(1);
-        List<Equip> list=new ArrayList<>();
-        list.add(equip);
-        List<Equip> equips =equipService.selectByList(list);
-        Suit suit=suitService.selectByPrimaryKey(equips.get(0).getSuitId());
-        JSONObject jsonObject=new JSONObject();
-        jsonObject.put("suit",suit);
-        jsonObject.put("equips",equips);
-        String str=JSONObject.toJSONString(equips);
-        log.info(str);
-        return new Result(ResultCode.SUCCESS.getCode(),ResultCode.SUCCESS.getDescribe(),jsonObject);
+    public Result getEquipsByIds(@RequestBody JSONObject map) {
+
+        List<Equip> equips = equipService.selectByList(null);
+
+
+        return new Result(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getDescribe(), equips);
+    }
+
+    @SysLog("添加装备")
+    @PostMapping("/addEquip")
+    @ResponseBody
+    public Result addEquip(@RequestBody Equip equip) {
+        try {
+            equipService.insertSelective(equip);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(ResultCode.Failed.getCode(), ResultCode.Failed.getDescribe());
+        }
+        return new Result(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getDescribe(), equip);
+
+    }
+
+    @SysLog("添加装备")
+    @PostMapping("/findEquipsByName")
+    @ResponseBody
+    public Result findEquipsByName(String name ) {
+        List<Equip> equips= null;
+        try {
+            equips = equipService.selectByName(name);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(ResultCode.Failed.getCode(),ResultCode.Failed.getDescribe());
+        }
+        return new Result(ResultCode.SUCCESS.getCode(),ResultCode.SUCCESS.getDescribe(),equips);
+
     }
 }

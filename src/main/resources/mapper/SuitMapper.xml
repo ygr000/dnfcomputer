@@ -613,4 +613,12 @@
       describtion = #{describtion,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByName" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+          from suit
+    <if test="name != null and name != ''">
+      where name like concat('%',#{name,jdbcType=VARCHAR},'%')
+    </if>
+  </select>
 </mapper>
