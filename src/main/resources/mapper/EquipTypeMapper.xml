@@ -58,4 +58,8 @@
     set typeName = #{typename,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getAll" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+          from equip_type
+  </select>
 </mapper>

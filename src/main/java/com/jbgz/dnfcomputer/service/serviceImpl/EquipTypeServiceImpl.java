@@ -5,6 +5,9 @@ import javax.annotation.Resource;
 import com.jbgz.dnfcomputer.model.EquipType;
 import com.jbgz.dnfcomputer.mapper.EquipTypeMapper;
 import com.jbgz.dnfcomputer.service.EquipTypeService;
+
+import java.util.List;
+
 /**
  * @Location:com.jbgz.dnfcomputer.service.serviceImpl
  * @Auth:ygr
@@ -60,6 +63,11 @@ public class EquipTypeServiceImpl implements EquipTypeService{
     @Override
     public int updateByPrimaryKey(EquipType record) {
         return equipTypeMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<EquipType> getAll() {
+        return equipTypeMapper.getAll();
     }
 
 }

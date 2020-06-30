@@ -25,30 +25,30 @@ DROP TABLE IF EXISTS `equip`;
 CREATE TABLE `equip` (
   `id` int NOT NULL AUTO_INCREMENT,
   `suit_id` int DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `huang` decimal(10,2) DEFAULT NULL,
-  `huangzhui` decimal(10,2) DEFAULT NULL,
-  `bao` decimal(10,2) DEFAULT NULL,
-  `baozhui` decimal(10,2) DEFAULT NULL,
-  `bai` decimal(10,2) DEFAULT NULL,
-  `shubai` decimal(10,2) DEFAULT NULL,
-  `percentage_lizhi` decimal(10,2) DEFAULT NULL,
-  `zuizhong` decimal(10,2) DEFAULT NULL,
-  `percentage_sangong` decimal(10,2) DEFAULT NULL,
-  `shuqiang` decimal(10,2) DEFAULT NULL,
-  `jineng` decimal(10,2) DEFAULT NULL,
-  `fixed_intelligence` decimal(10,2) DEFAULT NULL,
-  `lengque` decimal(10,2) DEFAULT NULL,
-  `fixed_power` decimal(10,2) DEFAULT NULL,
-  `dengji` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT '0',
+  `huang` decimal(10,2) DEFAULT '0.00' COMMENT '黄字伤害 ',
+  `huangzhui` decimal(10,2) DEFAULT '0.00' COMMENT '黄追',
+  `bao` decimal(10,2) DEFAULT '0.00',
+  `baozhui` decimal(10,2) DEFAULT '0.00',
+  `bai` decimal(10,2) DEFAULT '0.00',
+  `shubai` decimal(10,2) DEFAULT '0.00',
+  `percentage_lizhi` decimal(10,2) DEFAULT '0.00',
+  `zuizhong` decimal(10,2) DEFAULT '0.00',
+  `percentage_sangong` decimal(10,2) DEFAULT '0.00',
+  `shuqiang` decimal(10,2) DEFAULT '0.00',
+  `jineng` decimal(10,2) DEFAULT '0.00' COMMENT '技能攻击力',
+  `fixed_intelligence` decimal(10,2) DEFAULT '0.00',
+  `lengque` decimal(10,2) DEFAULT '0.00',
+  `fixed_power` decimal(10,2) DEFAULT '0.00',
+  `dengji` varchar(255) DEFAULT '0',
   `modify_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `equip_type` varchar(50) DEFAULT NULL COMMENT '1：头肩\n2：上衣\n3：腰带\n4：下装\n5：鞋\n6：武器\n7：称号\n8：手镯\n9：项链\n10：戒指\n11：辅助装备\n12：魔法师\n13：耳环\n14：宠物\n15：宠物装备\n...',
-  `equip_level` varchar(50) DEFAULT NULL COMMENT '史诗，神器',
-  `fixed_physics` decimal(10,2) DEFAULT NULL COMMENT '固定 物理攻击',
-  `fixed_magic` decimal(10,2) DEFAULT NULL COMMENT 'guding mofa ',
-  `fixed_gushang` decimal(10,2) DEFAULT NULL,
+  `equip_level` varchar(50) DEFAULT '史诗' COMMENT '史诗，神器',
+  `fixed_physics` decimal(10,2) DEFAULT '0.00' COMMENT '固定 物理攻击',
+  `fixed_magic` decimal(10,2) DEFAULT '0.00' COMMENT 'guding mofa ',
+  `fixed_gushang` decimal(10,2) DEFAULT '0.00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,7 +57,7 @@ CREATE TABLE `equip` (
 
 LOCK TABLES `equip` WRITE;
 /*!40000 ALTER TABLE `equip` DISABLE KEYS */;
-INSERT INTO `equip` (`id`, `suit_id`, `name`, `huang`, `huangzhui`, `bao`, `baozhui`, `bai`, `shubai`, `percentage_lizhi`, `zuizhong`, `percentage_sangong`, `shuqiang`, `jineng`, `fixed_intelligence`, `lengque`, `fixed_power`, `dengji`, `modify_time`, `equip_type`, `equip_level`, `fixed_physics`, `fixed_magic`, `fixed_gushang`) VALUES (1,0,NULL,100.00,101.11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2020-06-23 09:17:28',NULL,NULL,NULL,NULL,NULL),(2,3,'古代祭祀长礼袍',NULL,NULL,NULL,NULL,NULL,NULL,10.00,12.00,10.00,NULL,NULL,158.00,NULL,100.00,NULL,'2020-06-29 09:13:12','2','史诗',NULL,NULL,NULL),(3,3,'古代祭司长披肩',NULL,NULL,NULL,NULL,NULL,NULL,10.00,NULL,10.00,NULL,12.00,146.00,NULL,100.00,NULL,'2020-06-29 11:04:53','1','史诗',NULL,NULL,NULL),(4,3,'古代祭司长裙子',NULL,12.00,NULL,NULL,NULL,NULL,10.00,NULL,10.00,NULL,NULL,158.00,NULL,100.00,NULL,'2020-06-29 11:06:47','4','史诗',NULL,NULL,NULL),(5,3,'古代祭司长凉鞋',NULL,NULL,NULL,NULL,12.00,NULL,10.00,NULL,10.00,NULL,NULL,135.00,NULL,100.00,NULL,'2020-06-29 11:07:43','5','史诗',NULL,NULL,NULL),(6,3,'古代祭司长腰带',NULL,NULL,NULL,12.00,NULL,NULL,10.00,NULL,10.00,NULL,NULL,135.00,NULL,100.00,NULL,'2020-06-29 11:08:44','3','史诗',NULL,NULL,NULL);
+INSERT INTO `equip` (`id`, `suit_id`, `name`, `huang`, `huangzhui`, `bao`, `baozhui`, `bai`, `shubai`, `percentage_lizhi`, `zuizhong`, `percentage_sangong`, `shuqiang`, `jineng`, `fixed_intelligence`, `lengque`, `fixed_power`, `dengji`, `modify_time`, `equip_type`, `equip_level`, `fixed_physics`, `fixed_magic`, `fixed_gushang`) VALUES (1,0,NULL,100.00,101.11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2020-06-23 09:17:28',NULL,NULL,NULL,NULL,NULL),(2,3,'古代祭祀长礼袍',NULL,NULL,NULL,NULL,NULL,NULL,10.00,12.00,10.00,NULL,NULL,158.00,NULL,100.00,NULL,'2020-06-29 09:13:12','2','史诗',NULL,NULL,NULL),(3,3,'古代祭司长披肩',NULL,NULL,NULL,NULL,NULL,NULL,10.00,NULL,10.00,NULL,12.00,146.00,NULL,100.00,NULL,'2020-06-29 11:04:53','1','史诗',NULL,NULL,NULL),(4,3,'古代祭司长裙子',NULL,12.00,NULL,NULL,NULL,NULL,10.00,NULL,10.00,NULL,NULL,158.00,NULL,100.00,NULL,'2020-06-29 11:06:47','4','史诗',NULL,NULL,NULL),(5,3,'古代祭司长凉鞋',NULL,NULL,NULL,NULL,12.00,NULL,10.00,NULL,10.00,NULL,NULL,135.00,NULL,100.00,NULL,'2020-06-29 11:07:43','5','史诗',NULL,NULL,NULL),(6,3,'古代祭司长腰带',NULL,NULL,NULL,12.00,NULL,NULL,10.00,NULL,10.00,NULL,NULL,135.00,NULL,100.00,NULL,'2020-06-29 11:08:44','3','史诗',NULL,NULL,NULL),(7,3,'大祭司的神启礼服',0.00,0.00,0.00,0.00,10.00,0.00,20.00,12.00,21.00,0.00,0.00,160.00,0.00,100.00,'','2020-06-30 10:50:47','2','神话',0.00,0.00,0.00),(8,NULL,'大魔法师[]的长袍',0.00,11.00,0.00,0.00,0.00,0.00,28.00,12.00,10.00,0.00,0.00,160.00,0.00,100.00,'所有职业Lv1~45所有技能Lv+1(&&所有职业Lv1~45所有技能Lv+1(5&&null','2020-06-30 10:57:48','2','神话',0.00,0.00,0.00),(9,NULL,'魔法师[???]的披风',0.00,0.00,0.00,0.00,0.00,0.00,5.00,0.00,10.00,0.00,13.00,146.00,0.00,100.00,'0','2020-06-30 11:00:02','1','史诗',0.00,0.00,0.00),(10,NULL,'魔法师[???]的护腿',0.00,12.00,0.00,0.00,0.00,0.00,5.00,0.00,10.00,18.00,0.00,158.00,0.00,100.00,'0','2020-06-30 11:00:15','4','史诗',0.00,0.00,0.00),(11,NULL,'魔法师[??]的长靴',0.00,0.00,0.00,16.00,0.00,0.00,5.00,0.00,10.00,0.00,0.00,135.00,0.00,100.00,'0','2020-06-30 11:00:23','5','史诗',0.00,0.00,0.00),(12,NULL,'魔法师[??]的腰带',0.00,0.00,0.00,0.00,14.00,0.00,5.00,0.00,10.00,0.00,0.00,135.00,0.00,100.00,'0','2020-06-30 11:00:28','3','史诗',0.00,0.00,0.00),(13,NULL,'浪漫旋律华尔兹',0.00,25.00,0.00,142.00,0.00,0.00,0.00,10.00,11.00,5241224.00,0.00,1001170.00,0.00,1001110.00,'0','2020-06-30 11:00:34','2','神话',0.00,0.00,0.00),(14,NULL,'魔法师[???]的长袍',0.00,0.00,0.00,0.00,0.00,0.00,5.00,12.00,10.00,0.00,0.00,158.00,0.00,0.00,'所有职业Lv145所有技能Lv+1(&&null','2020-06-30 11:00:41','2','史诗',0.00,0.00,0.00),(15,NULL,'优雅旋律华尔兹',0.00,17.00,0.00,14.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,158.00,0.00,100.00,'0','2020-06-30 11:00:47','2','史诗',0.00,0.00,0.00),(16,NULL,'性感酒脱探戈',0.00,0.00,0.00,0.00,17.00,0.00,0.00,0.00,0.00,0.00,14.00,146.00,0.00,0.00,'0','2020-06-30 11:00:55','1','史诗',0.00,0.00,0.00),(17,NULL,'魅惑律动伦巴',0.00,0.00,0.00,0.00,0.00,0.00,14.00,17.00,0.00,0.00,0.00,158.00,0.00,0.00,'0','2020-06-30 11:01:01','4','史诗',0.00,0.00,0.00),(18,NULL,'激烈欢动踢踏',0.00,0.00,0.00,0.00,14.00,0.00,0.00,0.00,17.00,0.00,0.00,135.00,0.00,0.00,'0','2020-06-30 11:01:07','5','史诗',0.00,0.00,0.00),(19,NULL,'热情舞动桑巴',0.00,0.00,0.00,0.00,0.00,0.00,17.00,14.00,0.00,0.00,0.00,135.00,0.00,100.00,'0','2020-06-30 11:01:12','3','史诗',0.00,0.00,0.00),(20,NULL,'深渊囚禁者长袍',0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,7.00,0.00,0.00,160.00,0.00,100.00,'所有职业L5~100所有技能Lv+1(1&&null','2020-06-30 11:01:21','2','神话',0.00,0.00,80108.00),(21,NULL,'军神的心之所念',0.00,0.00,0.00,0.00,4.00,0.00,0.00,24.00,30.00,0.00,14.00,901261.00,0.00,901261.00,'0','2020-06-30 11:01:27','13','神话',0.00,0.00,0.00),(22,NULL,'军神的遗书',0.00,25.00,0.00,0.00,14.00,0.00,0.00,0.00,0.00,0.00,0.00,146.00,0.00,146.00,'0','2020-06-30 11:01:31','11','史诗',0.00,0.00,0.00),(23,NULL,'军神的庇护宝石',0.00,0.00,0.00,21.00,0.00,0.00,0.00,0.00,0.00,0.00,17.00,169.00,0.00,0.00,'0','2020-06-30 11:01:36','12','史诗',0.00,0.00,0.00),(24,NULL,'军神的古怪耳环',510.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,15.00,0.00,0.00,199.00,0.00,169.00,'0','2020-06-30 11:01:41','13','史诗',0.00,0.00,0.00),(25,NULL,'伽内什的永恒庇护',0.00,10.00,0.00,11.00,7.00,0.00,19.00,0.00,8.00,0.00,7.00,502157.00,0.00,156.00,'0','2020-06-30 11:01:46','8','神话',0.00,0.00,0.00),(26,NULL,'白象之庇护',0.00,7.00,0.00,7.00,7.00,0.00,0.00,0.00,0.00,0.00,7.00,107.00,0.00,147.00,'0','2020-06-30 11:01:51','8','史诗',0.00,0.00,0.00),(27,NULL,'红兔之祝福',0.00,7.00,0.00,7.00,0.00,0.00,7.00,7.00,7.00,0.00,0.00,171.00,0.00,171.00,'0','2020-06-30 11:01:57','10','史诗',0.00,0.00,0.00),(28,NULL,'秘境迷踪',335.00,0.00,0.00,0.00,7810.00,0.00,0.00,0.00,0.00,15743.00,0.00,90.00,0.00,70.00,'所有职业Lv150全部主动技能Lv&&null','2020-06-30 11:02:03','7','史诗',70.00,70.00,100.00),(29,NULL,'神之意象',0.00,35.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,50.00,24.00,0.00,0.00,81.00,'魔法攻击+1106(-1447装武器技能Lv增效果无法超越技能Lv上限&&所有职业Lv100全部技能Lv+2(特&&所有职业Lv185全部技能Lv+2&&null','2020-06-30 11:02:09','6','史诗',1475.00,1106.00,770.00),(30,NULL,'太极天帝剑',0.00,0.00,0.00,0.00,0.00,0.00,10.00,21.00,40.00,0.00,53.00,122.00,0.00,81.00,'0','2020-06-30 11:02:17','6','史诗',1167.00,1290.00,770.00),(31,NULL,'大祭司的星祈披肩',0.00,0.00,0.00,0.00,0.00,0.00,10.00,0.00,10.00,0.00,12.00,146.00,0.00,100.00,'0','2020-06-30 11:02:23','1','史诗',0.00,0.00,0.00),(32,NULL,'大祭司的星祈长裙',0.00,12.00,0.00,0.00,0.00,0.00,10.00,0.00,10.00,0.00,0.00,158.00,0.00,100.00,'0','2020-06-30 11:11:21','4','史诗',0.00,0.00,0.00),(33,NULL,'大祭司的星祈礼袍',0.00,0.00,0.00,0.00,0.00,0.00,10.00,12.00,10.00,0.00,0.00,158.00,0.00,0.00,'0','2020-06-30 11:11:32','2','史诗',0.00,0.00,0.00),(34,NULL,'大祭司的星祈凉鞋',0.00,0.00,0.00,0.00,12.00,0.00,10.00,0.00,10.00,0.00,0.00,135.00,0.00,100.00,'0','2020-06-30 11:12:07','5','史诗',0.00,0.00,0.00),(35,NULL,'大祭司的星祈腰带',0.00,0.00,0.00,12.00,0.00,0.00,10.00,0.00,10.00,0.00,0.00,135.00,0.00,100.00,'0','2020-06-30 11:12:12','3','史诗',0.00,0.00,0.00);
 /*!40000 ALTER TABLE `equip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-29 19:30:47
+-- Dump completed on 2020-06-30 19:50:24

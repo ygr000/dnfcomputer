@@ -51,3 +51,8 @@ spring:
       # 登录用户名/密码
 #      login-username: root
 #      login-password: 123
+
+#图像识别
+AppID: 20660138
+ApiKey: LEpZ7ysB567PAGNGYMQuxcU0
+SecretKey: KYfk6uQdyUF0a1e7t6swP9I1GTPxRrjO

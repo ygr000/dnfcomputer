@@ -1,7 +1,10 @@
 package com.jbgz.dnfcomputer.service;
 
 import com.jbgz.dnfcomputer.model.EquipType;
-    /**
+
+import java.util.List;
+
+/**
  * @Location:com.jbgz.dnfcomputer.service
  * @Auth:ygr
  * @DATE:2020/6/29 19:29
@@ -36,5 +39,7 @@ public interface EquipTypeService{
     int updateByPrimaryKeySelective(EquipType record);
 
     int updateByPrimaryKey(EquipType record);
+    List<EquipType> getAll();
+
 
 }

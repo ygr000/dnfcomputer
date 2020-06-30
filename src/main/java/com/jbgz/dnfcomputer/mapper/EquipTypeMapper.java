@@ -2,6 +2,8 @@ package com.jbgz.dnfcomputer.mapper;
 
 import com.jbgz.dnfcomputer.model.EquipType;
 
+import java.util.List;
+
 /**
  * @Location:com.jbgz.dnfcomputer.mapper
  * @Auth:ygr
@@ -35,4 +37,6 @@ public interface EquipTypeMapper {
     int updateByPrimaryKeySelective(EquipType record);
 
     int updateByPrimaryKey(EquipType record);
+
+    List<EquipType> getAll();
 }
