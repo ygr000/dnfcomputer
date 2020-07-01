@@ -142,8 +142,17 @@ CREATE TABLE `suit` (
   `fixed_intelligence5` decimal(10,2) DEFAULT NULL,
   `modify_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `describtion` varchar(255) DEFAULT NULL,
+  `fixed_physics2` decimal(10,2) DEFAULT NULL,
+  `fixed_physics3` decimal(10,2) DEFAULT NULL,
+  `fixed_physics5` decimal(10,2) DEFAULT NULL,
+  `fixed_magic2` decimal(10,2) DEFAULT NULL,
+  `fixed_magic3` decimal(10,2) DEFAULT NULL,
+  `fixed_magic5` decimal(10,2) DEFAULT NULL,
+  `fixed_gushang2` decimal(10,2) DEFAULT NULL,
+  `fixed_gushang3` decimal(10,2) DEFAULT NULL,
+  `fixed_gushang5` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +161,7 @@ CREATE TABLE `suit` (
 
 LOCK TABLES `suit` WRITE;
 /*!40000 ALTER TABLE `suit` DISABLE KEYS */;
-INSERT INTO `suit` (`id`, `name`, `huang2`, `huangzhui2`, `bao2`, `baozhui2`, `bai2`, `shubai2`, `percentage_lizhi2`, `zuizhong2`, `percentage_sangong2`, `shuqiang2`, `jineng2`, `dengji2`, `lengque2`, `fixed_power2`, `fixed_intelligence2`, `huang3`, `huangzhui3`, `bao3`, `baozhui3`, `bai3`, `shubai3`, `percentage_lizhi3`, `zuizhong3`, `percentage_sangong3`, `shuqiang3`, `jineng3`, `dengji3`, `lengque3`, `fixed_power3`, `fixed_intelligence3`, `huang5`, `huangzhui5`, `bao5`, `baozhui5`, `bai5`, `shubai5`, `percentage_lizhi5`, `zuizhong5`, `percentage_sangong5`, `shuqiang5`, `jineng5`, `dengji5`, `lengque5`, `fixed_power5`, `fixed_intelligence5`, `modify_time`, `describtion`) VALUES (0,'无',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2020-06-29 07:25:30','默认单件无套装属性，使装备表单件suitid填此id'),(3,'古代祭司长的神圣仪式',NULL,21.00,NULL,NULL,NULL,NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,21.00,NULL,NULL,NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,21.00,NULL,NULL,NULL,NULL,NULL,NULL,25.00,NULL,NULL,NULL,NULL,'2020-06-29 10:20:37','古代祭司长的神圣仪式套装');
+INSERT INTO `suit` (`id`, `name`, `huang2`, `huangzhui2`, `bao2`, `baozhui2`, `bai2`, `shubai2`, `percentage_lizhi2`, `zuizhong2`, `percentage_sangong2`, `shuqiang2`, `jineng2`, `dengji2`, `lengque2`, `fixed_power2`, `fixed_intelligence2`, `huang3`, `huangzhui3`, `bao3`, `baozhui3`, `bai3`, `shubai3`, `percentage_lizhi3`, `zuizhong3`, `percentage_sangong3`, `shuqiang3`, `jineng3`, `dengji3`, `lengque3`, `fixed_power3`, `fixed_intelligence3`, `huang5`, `huangzhui5`, `bao5`, `baozhui5`, `bai5`, `shubai5`, `percentage_lizhi5`, `zuizhong5`, `percentage_sangong5`, `shuqiang5`, `jineng5`, `dengji5`, `lengque5`, `fixed_power5`, `fixed_intelligence5`, `modify_time`, `describtion`, `fixed_physics2`, `fixed_physics3`, `fixed_physics5`, `fixed_magic2`, `fixed_magic3`, `fixed_magic5`, `fixed_gushang2`, `fixed_gushang3`, `fixed_gushang5`) VALUES (0,'无',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2020-06-29 07:25:30','默认单件无套装属性，使装备表单件suitid填此id',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,'古代祭司长的神圣仪式',NULL,21.00,NULL,NULL,NULL,NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,21.00,NULL,NULL,NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,21.00,NULL,NULL,NULL,NULL,NULL,NULL,25.00,NULL,NULL,NULL,NULL,'2020-06-29 10:20:37','古代祭司长的神圣仪式套装',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'古代祭祀的神圣仪式套装',NULL,21.00,NULL,NULL,NULL,NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,21.00,NULL,NULL,NULL,8.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,21.00,NULL,NULL,NULL,NULL,NULL,NULL,25.00,NULL,NULL,NULL,NULL,'2020-07-01 07:14:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `suit` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -165,4 +174,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-30 19:50:24
+-- Dump completed on 2020-07-01 15:28:32

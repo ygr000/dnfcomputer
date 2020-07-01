@@ -53,6 +53,15 @@
     <result column="fixed_intelligence5" jdbcType="DECIMAL" property="fixedIntelligence5" />
     <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
     <result column="describtion" jdbcType="VARCHAR" property="describtion" />
+    <result column="fixed_physics2" jdbcType="DECIMAL" property="fixedPhysics2" />
+    <result column="fixed_physics3" jdbcType="DECIMAL" property="fixedPhysics3" />
+    <result column="fixed_physics5" jdbcType="DECIMAL" property="fixedPhysics5" />
+    <result column="fixed_magic2" jdbcType="DECIMAL" property="fixedMagic2" />
+    <result column="fixed_magic3" jdbcType="DECIMAL" property="fixedMagic3" />
+    <result column="fixed_magic5" jdbcType="DECIMAL" property="fixedMagic5" />
+    <result column="fixed_gushang2" jdbcType="DECIMAL" property="fixedGushang2" />
+    <result column="fixed_gushang3" jdbcType="DECIMAL" property="fixedGushang3" />
+    <result column="fixed_gushang5" jdbcType="DECIMAL" property="fixedGushang5" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
@@ -62,7 +71,8 @@
     zuizhong3, percentage_sangong3, shuqiang3, jineng3, dengji3, lengque3, fixed_power3, 
     fixed_intelligence3, huang5, huangzhui5, bao5, baozhui5, bai5, shubai5, percentage_lizhi5, 
     zuizhong5, percentage_sangong5, shuqiang5, jineng5, dengji5, lengque5, fixed_power5, 
-    fixed_intelligence5, modify_time, describtion
+    fixed_intelligence5, modify_time, describtion, fixed_physics2, fixed_physics3, fixed_physics5, 
+    fixed_magic2, fixed_magic3, fixed_magic5, fixed_gushang2, fixed_gushang3, fixed_gushang5
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -93,7 +103,10 @@
       shubai5, percentage_lizhi5, zuizhong5, 
       percentage_sangong5, shuqiang5, jineng5, 
       dengji5, lengque5, fixed_power5, 
-      fixed_intelligence5, modify_time, describtion
+      fixed_intelligence5, modify_time, describtion, 
+      fixed_physics2, fixed_physics3, fixed_physics5, 
+      fixed_magic2, fixed_magic3, fixed_magic5, 
+      fixed_gushang2, fixed_gushang3, fixed_gushang5
       )
     values (#{name,jdbcType=VARCHAR}, #{huang2,jdbcType=DECIMAL}, #{huangzhui2,jdbcType=DECIMAL}, 
       #{bao2,jdbcType=DECIMAL}, #{baozhui2,jdbcType=DECIMAL}, #{bai2,jdbcType=DECIMAL}, 
@@ -110,7 +123,10 @@
       #{shubai5,jdbcType=DECIMAL}, #{percentageLizhi5,jdbcType=DECIMAL}, #{zuizhong5,jdbcType=DECIMAL}, 
       #{percentageSangong5,jdbcType=DECIMAL}, #{shuqiang5,jdbcType=DECIMAL}, #{jineng5,jdbcType=DECIMAL}, 
       #{dengji5,jdbcType=VARCHAR}, #{lengque5,jdbcType=DECIMAL}, #{fixedPower5,jdbcType=DECIMAL}, 
-      #{fixedIntelligence5,jdbcType=DECIMAL}, #{modifyTime,jdbcType=TIMESTAMP}, #{describtion,jdbcType=VARCHAR}
+      #{fixedIntelligence5,jdbcType=DECIMAL}, #{modifyTime,jdbcType=TIMESTAMP}, #{describtion,jdbcType=VARCHAR}, 
+      #{fixedPhysics2,jdbcType=DECIMAL}, #{fixedPhysics3,jdbcType=DECIMAL}, #{fixedPhysics5,jdbcType=DECIMAL}, 
+      #{fixedMagic2,jdbcType=DECIMAL}, #{fixedMagic3,jdbcType=DECIMAL}, #{fixedMagic5,jdbcType=DECIMAL}, 
+      #{fixedGushang2,jdbcType=DECIMAL}, #{fixedGushang3,jdbcType=DECIMAL}, #{fixedGushang5,jdbcType=DECIMAL}
       )
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.jbgz.dnfcomputer.model.Suit" useGeneratedKeys="true">
@@ -261,6 +277,33 @@
       <if test="describtion != null and describtion != ''">
         describtion,
       </if>
+      <if test="fixedPhysics2 != null">
+        fixed_physics2,
+      </if>
+      <if test="fixedPhysics3 != null">
+        fixed_physics3,
+      </if>
+      <if test="fixedPhysics5 != null">
+        fixed_physics5,
+      </if>
+      <if test="fixedMagic2 != null">
+        fixed_magic2,
+      </if>
+      <if test="fixedMagic3 != null">
+        fixed_magic3,
+      </if>
+      <if test="fixedMagic5 != null">
+        fixed_magic5,
+      </if>
+      <if test="fixedGushang2 != null">
+        fixed_gushang2,
+      </if>
+      <if test="fixedGushang3 != null">
+        fixed_gushang3,
+      </if>
+      <if test="fixedGushang5 != null">
+        fixed_gushang5,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null and name != ''">
@@ -406,6 +449,33 @@
       </if>
       <if test="describtion != null and describtion != ''">
         #{describtion,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedPhysics2 != null">
+        #{fixedPhysics2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPhysics3 != null">
+        #{fixedPhysics3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPhysics5 != null">
+        #{fixedPhysics5,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedMagic2 != null">
+        #{fixedMagic2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedMagic3 != null">
+        #{fixedMagic3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedMagic5 != null">
+        #{fixedMagic5,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedGushang2 != null">
+        #{fixedGushang2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedGushang3 != null">
+        #{fixedGushang3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedGushang5 != null">
+        #{fixedGushang5,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
@@ -557,6 +627,33 @@
       <if test="describtion != null and describtion != ''">
         describtion = #{describtion,jdbcType=VARCHAR},
       </if>
+      <if test="fixedPhysics2 != null">
+        fixed_physics2 = #{fixedPhysics2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPhysics3 != null">
+        fixed_physics3 = #{fixedPhysics3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedPhysics5 != null">
+        fixed_physics5 = #{fixedPhysics5,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedMagic2 != null">
+        fixed_magic2 = #{fixedMagic2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedMagic3 != null">
+        fixed_magic3 = #{fixedMagic3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedMagic5 != null">
+        fixed_magic5 = #{fixedMagic5,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedGushang2 != null">
+        fixed_gushang2 = #{fixedGushang2,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedGushang3 != null">
+        fixed_gushang3 = #{fixedGushang3,jdbcType=DECIMAL},
+      </if>
+      <if test="fixedGushang5 != null">
+        fixed_gushang5 = #{fixedGushang5,jdbcType=DECIMAL},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -610,7 +707,16 @@
       fixed_power5 = #{fixedPower5,jdbcType=DECIMAL},
       fixed_intelligence5 = #{fixedIntelligence5,jdbcType=DECIMAL},
       modify_time = #{modifyTime,jdbcType=TIMESTAMP},
-      describtion = #{describtion,jdbcType=VARCHAR}
+      describtion = #{describtion,jdbcType=VARCHAR},
+      fixed_physics2 = #{fixedPhysics2,jdbcType=DECIMAL},
+      fixed_physics3 = #{fixedPhysics3,jdbcType=DECIMAL},
+      fixed_physics5 = #{fixedPhysics5,jdbcType=DECIMAL},
+      fixed_magic2 = #{fixedMagic2,jdbcType=DECIMAL},
+      fixed_magic3 = #{fixedMagic3,jdbcType=DECIMAL},
+      fixed_magic5 = #{fixedMagic5,jdbcType=DECIMAL},
+      fixed_gushang2 = #{fixedGushang2,jdbcType=DECIMAL},
+      fixed_gushang3 = #{fixedGushang3,jdbcType=DECIMAL},
+      fixed_gushang5 = #{fixedGushang5,jdbcType=DECIMAL}
     where id = #{id,jdbcType=INTEGER}
   </update>
 

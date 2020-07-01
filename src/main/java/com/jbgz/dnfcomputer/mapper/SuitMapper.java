@@ -1,14 +1,11 @@
 package com.jbgz.dnfcomputer.mapper;
 
-import com.jbgz.dnfcomputer.model.Suit;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
+import com.jbgz.dnfcomputer.model.Suit;import org.apache.ibatis.annotations.Param;import java.util.List;
 
 /**
  * @Location:com.jbgz.dnfcomputer.mapper
  * @Auth:ygr
- * @DATE:2020/6/29 16:03
+ * @DATE:2020/7/1 12:07
  * <p>
  * .                ,]++++++++]`
  * .              ]++o**=++++++++\`

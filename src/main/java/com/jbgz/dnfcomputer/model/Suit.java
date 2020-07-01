@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * @Location:com.jbgz.dnfcomputer.model
  * @Auth:ygr
- * @DATE:2020/6/29 16:03
+ * @DATE:2020/7/1 12:07
  * <p>
  * .                ,]++++++++]`
  * .              ]++o**=++++++++\`
@@ -122,6 +122,24 @@ public class Suit {
     private Date modifyTime;
 
     private String describtion;
+
+    private BigDecimal fixedPhysics2;
+
+    private BigDecimal fixedPhysics3;
+
+    private BigDecimal fixedPhysics5;
+
+    private BigDecimal fixedMagic2;
+
+    private BigDecimal fixedMagic3;
+
+    private BigDecimal fixedMagic5;
+
+    private BigDecimal fixedGushang2;
+
+    private BigDecimal fixedGushang3;
+
+    private BigDecimal fixedGushang5;
 
     public Integer getId() {
         return id;
@@ -515,6 +533,78 @@ public class Suit {
         this.describtion = describtion;
     }
 
+    public BigDecimal getFixedPhysics2() {
+        return fixedPhysics2;
+    }
+
+    public void setFixedPhysics2(BigDecimal fixedPhysics2) {
+        this.fixedPhysics2 = fixedPhysics2;
+    }
+
+    public BigDecimal getFixedPhysics3() {
+        return fixedPhysics3;
+    }
+
+    public void setFixedPhysics3(BigDecimal fixedPhysics3) {
+        this.fixedPhysics3 = fixedPhysics3;
+    }
+
+    public BigDecimal getFixedPhysics5() {
+        return fixedPhysics5;
+    }
+
+    public void setFixedPhysics5(BigDecimal fixedPhysics5) {
+        this.fixedPhysics5 = fixedPhysics5;
+    }
+
+    public BigDecimal getFixedMagic2() {
+        return fixedMagic2;
+    }
+
+    public void setFixedMagic2(BigDecimal fixedMagic2) {
+        this.fixedMagic2 = fixedMagic2;
+    }
+
+    public BigDecimal getFixedMagic3() {
+        return fixedMagic3;
+    }
+
+    public void setFixedMagic3(BigDecimal fixedMagic3) {
+        this.fixedMagic3 = fixedMagic3;
+    }
+
+    public BigDecimal getFixedMagic5() {
+        return fixedMagic5;
+    }
+
+    public void setFixedMagic5(BigDecimal fixedMagic5) {
+        this.fixedMagic5 = fixedMagic5;
+    }
+
+    public BigDecimal getFixedGushang2() {
+        return fixedGushang2;
+    }
+
+    public void setFixedGushang2(BigDecimal fixedGushang2) {
+        this.fixedGushang2 = fixedGushang2;
+    }
+
+    public BigDecimal getFixedGushang3() {
+        return fixedGushang3;
+    }
+
+    public void setFixedGushang3(BigDecimal fixedGushang3) {
+        this.fixedGushang3 = fixedGushang3;
+    }
+
+    public BigDecimal getFixedGushang5() {
+        return fixedGushang5;
+    }
+
+    public void setFixedGushang5(BigDecimal fixedGushang5) {
+        this.fixedGushang5 = fixedGushang5;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -570,6 +660,15 @@ public class Suit {
         sb.append(", fixedIntelligence5=").append(fixedIntelligence5);
         sb.append(", modifyTime=").append(modifyTime);
         sb.append(", describtion=").append(describtion);
+        sb.append(", fixedPhysics2=").append(fixedPhysics2);
+        sb.append(", fixedPhysics3=").append(fixedPhysics3);
+        sb.append(", fixedPhysics5=").append(fixedPhysics5);
+        sb.append(", fixedMagic2=").append(fixedMagic2);
+        sb.append(", fixedMagic3=").append(fixedMagic3);
+        sb.append(", fixedMagic5=").append(fixedMagic5);
+        sb.append(", fixedGushang2=").append(fixedGushang2);
+        sb.append(", fixedGushang3=").append(fixedGushang3);
+        sb.append(", fixedGushang5=").append(fixedGushang5);
         sb.append("]");
         return sb.toString();
     }

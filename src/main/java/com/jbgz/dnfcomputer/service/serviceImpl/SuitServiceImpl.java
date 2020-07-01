@@ -12,25 +12,25 @@ import java.util.List;
  * @Location:com.jbgz.dnfcomputer.service.serviceImpl
  * @Auth:ygr
  * @DATE:2020/6/29 16:03
- * 
- * .                ,]++++++++]`                
- * .              ]++o**=++++++++\`             
- * .          ,+++++++o\]**[*=++++\             
- * .         ++++++++++++++++oo++++^            
- * .        =+++++++++++++++++++++++            
- * .       =+/`,++o++oo++++++++++++++\          
- * .        + +\++\****\++=+++++++\++++         
- * .           \\ \\//`*]o+++++oo/ /+++`        
- * .           ,+`   [\++++++[`,[+\=+++^        
- * .           +`        ++]]++    ,++^         
- * .          =+         \`         +[          
- * .           +`         ,+`                   
- * .            +`  ]/+++++\/+                  
- * .             =+]=^                          
- * .            *,[[ 
+ * <p>
+ * .                ,]++++++++]`
+ * .              ]++o**=++++++++\`
+ * .          ,+++++++o\]**[*=++++\
+ * .         ++++++++++++++++oo++++^
+ * .        =+++++++++++++++++++++++
+ * .       =+/`,++o++oo++++++++++++++\
+ * .        + +\++\****\++=+++++++\++++
+ * .           \\ \\//`*]o+++++oo/ /+++`
+ * .           ,+`   [\++++++[`,[+\=+++^
+ * .           +`        ++]]++    ,++^
+ * .          =+         \`         +[
+ * .           +`         ,+`
+ * .            +`  ]/+++++\/+
+ * .             =+]=^
+ * .            *,[[
  */
 @Service
-public class SuitServiceImpl implements SuitService{
+public class SuitServiceImpl implements SuitService {
 
     @Resource
     private SuitMapper suitMapper;
@@ -71,3 +71,4 @@ public class SuitServiceImpl implements SuitService{
     }
 
 }
+
